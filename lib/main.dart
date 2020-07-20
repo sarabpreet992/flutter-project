@@ -14,7 +14,10 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Awesome app"),
       ),
-      body: Center(
+      body: Container(
+        color: Colors.black,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
