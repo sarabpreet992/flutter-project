@@ -45,12 +45,12 @@ class Homepage extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-                child: Text("Hi I am Drawer",
-                    style: TextStyle(color: Colors.purple)),
-                decoration: BoxDecoration(
-                  color: Colors.amberAccent,
-                )),
+            UserAccountsDrawerHeader(
+                accountName: Text("Sarbpreet kaur"),
+                accountEmail: Text("Sarabpreet992@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://unsplash.com/photos/8LkXr6Ydgao"))),
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Account"),
