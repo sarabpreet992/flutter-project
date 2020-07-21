@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    title: 'Awsome app',
+    title: 'Awesome app',
     home: Homepage(),
+    theme: ThemeData(
+      primarySwatch: Colors.amber,
+    ),
   ));
 }
 
@@ -14,101 +17,64 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Awesome app"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            color: Colors.black,
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+      body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                    width: 100,
-                    height: 100,
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        gradient: LinearGradient(
-                          colors: [Colors.yellow, Colors.pink],
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 5,
-                            offset: Offset(3.0, 6.0),
-                          )
-                        ]),
-                    child: Text(
-                      "Hello world",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.blueGrey,
-                          fontWeight: FontWeight.w300),
-                    )),
-                Container(
+                  padding: EdgeInsets.all(10),
+                  child: Text("hindi"),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.rectangle, color: Colors.yellow),
                   width: 100,
                   height: 100,
-                  padding: EdgeInsets.all(10),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      gradient: LinearGradient(
-                        colors: [Colors.green, Colors.pink],
-                      ),
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 5,
-                          offset: Offset(3.0, 6.0),
-                        )
-                      ]),
-                  child: Text(
-                    "Hello world",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.blueGrey,
-                        fontWeight: FontWeight.w300),
-                  ),
                 ),
                 Container(
-                    width: 100,
-                    height: 100,
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Colors.yellow,
-                        gradient: LinearGradient(
-                          colors: [Colors.green, Colors.pink],
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 5,
-                            offset: Offset(3.0, 6.0),
-                          )
-                        ]),
-                    child: Text(
-                      "Hello world",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.blueGrey,
-                          fontWeight: FontWeight.w300),
-                    )),
-              ],
+                  padding: EdgeInsets.all(10),
+                  child: Text("Punjabi"),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.rectangle, color: Colors.blue),
+                  width: 100,
+                  height: 100,
+                )
+              ])),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+                child: Text("Hi I am Drawer",
+                    style: TextStyle(color: Colors.purple)),
+                decoration: BoxDecoration(
+                  color: Colors.amberAccent,
+                )),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("Personal"),
+              trailing: Icon(Icons.edit),
             ),
-          ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("sarabpreet992@gmail.com"),
+              trailing: Icon(Icons.send),
+            ),
+            ListTile(
+              leading: Icon(Icons.mic),
+              title: Text("speak here"),
+              subtitle: Text("speak to record"),
+              trailing: Icon(Icons.check),
+            )
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
       ),
     );
   }
